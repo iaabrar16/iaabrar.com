@@ -56,29 +56,3 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 
-
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyi2eR4cmr1CVtKBKU7F765wJez0cOnw_v8u3My12TG_N4rdX1ciQsP2mWqT2DSs8r1GQ/exec'
-const form = document.forms['submit-to-google-sheet']
-
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message))
-})
-
-function sendEmail(){
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "iaabrar201181@bscse.uiu.ac.bd",
-        Password : "password",
-        To : 'iaabrar201181@bscse.uiu.ac.bd',
-        From : document.getElementById("email").value,
-        Subject : "New Contact form",
-        Body : "Name: " +document.getElementById("name").value
-              + "<br> Email: " +document.getElementById("email").value
-              + "<br> Message: " +document.getElementById("message").value
-    }).then(
-      message => alert("Message sent successfully")
-    );
-}
