@@ -66,3 +66,19 @@ form.addEventListener('submit', e => {
     .then(response => console.log('Success!', response))
     .catch(error => console.error('Error!', error.message))
 })
+
+function sendEmail(){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "iaabrar201181@bscse.uiu.ac.bd",
+        Password : "password",
+        To : 'iaabrar201181@bscse.uiu.ac.bd',
+        From : document.getElementById("email").value,
+        Subject : "New Contact form",
+        Body : "Name: " document.getElementById("name").value
+              + "<br> Email: "document.getElementById("email").value
+              + "<br> Message: "document.getElementById("message").value
+    }).then(
+      message => alert("Message sent successfully")
+    );
+}
