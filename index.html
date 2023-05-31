@@ -173,7 +173,7 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form name="submit-to-google-sheet"  class="contact__form">
+                   <form name="submit-to-google-sheet"  class="contact__form" onsubmit="sendEmail(); reset(); return false;">
                         <input type="text" placeholder="Name" class="contact__input">
                         <input type="mail" placeholder="Email" class="contact__input">
                         <textarea name="text" id="" cols="0" rows="10" placeholder="Message"class="contact__input"></textarea>
@@ -198,7 +198,7 @@
         
         <script src="https://unpkg.com/scrollreveal"></script>
 
-       
+       <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="assets/js/main.js"></script>
  
     </body>
